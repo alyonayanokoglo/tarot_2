@@ -42,8 +42,8 @@ export default function TarotCard({
           // Mobile: fit within dvh so page doesn't need vertical scrolling
           // Height is the source of truth; width is derived from aspect-ratio.
           // Slightly taller on mobile to fit longer predictions
-          "relative h-[70dvh] max-h-[560px] min-h-[380px] w-auto select-none sm:h-[62dvh] sm:min-h-[440px]",
-          "aspect-[9/14] max-w-[420px]",
+          "relative h-[64dvh] max-h-[520px] min-h-[350px] w-auto select-none sm:h-[58dvh] sm:min-h-[420px]",
+          "aspect-[9/14] max-w-[390px]",
           "rounded-2xl border border-white/10 bg-white/[0.04]",
           "shadow-none",
           isClickable ? "cursor-pointer" : "cursor-default",
