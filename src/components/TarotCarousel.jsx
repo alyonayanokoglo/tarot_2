@@ -292,7 +292,8 @@ export default function TarotCarousel({ cards }) {
         <div
           ref={containerRef}
           className={[
-            "no-scrollbar my-[23px] flex w-full gap-4 overflow-x-auto pt-[19px] pb-[19px]",
+            // Add extra bottom space on mobile because the action button is fixed to the viewport.
+            "no-scrollbar my-[23px] flex w-full gap-4 overflow-x-auto pt-[19px] pb-[92px] md:pb-[19px]",
             isSpinning ? "snap-none" : "snap-x snap-mandatory",
             "scroll-px-8 md:scroll-px-16",
             "px-7 md:px-10",
@@ -338,12 +339,17 @@ export default function TarotCarousel({ cards }) {
       </div>
 
       {/* Bottom controls */}
-      <div className="mt-2 flex items-center justify-between gap-3 px-6 md:px-10">
-        <div className="flex w-full items-center">
+      <div
+        className={[
+          // Mobile: keep action button always on-screen.
+          "fixed inset-x-0 bottom-0 z-20 px-6 pb-[calc(env(safe-area-inset-bottom,0px)+12px)] pt-3 md:static md:mt-2 md:px-10 md:pb-0 md:pt-0",
+        ].join(" ")}
+      >
+        <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-3">
           {phase === "selected" || phase === "prediction" ? (
             <button
               onClick={reset}
-              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/85 hover:bg-white/10 active:bg-white/15"
+              className="w-full rounded-2xl border border-white/10 bg-[#1C1C1C]/85 px-4 py-3 text-sm font-semibold text-white/90 backdrop-blur hover:bg-[#1C1C1C]/75 active:bg-[#1C1C1C]/70 md:bg-white/5 md:text-white/85 md:hover:bg-white/10 md:active:bg-white/15"
             >
               Выбрать заново
             </button>
@@ -355,8 +361,8 @@ export default function TarotCarousel({ cards }) {
                 "w-full rounded-2xl border px-4 py-[11px] text-sm font-semibold tracking-wide",
                 "transition active:scale-[0.99]",
                 isSpinning
-                  ? "border-white/10 bg-white/5 text-white/55"
-                  : "border-accent bg-accent text-white hover:brightness-110",
+                  ? "border-white/10 bg-[#1C1C1C]/85 text-white/65 backdrop-blur md:bg-white/5 md:text-white/55"
+                  : "border-accent bg-accent text-white shadow-glow hover:brightness-110",
               ].join(" ")}
             >
               {isSpinning ? "Крутим…" : "Выбрать предсказание"}
