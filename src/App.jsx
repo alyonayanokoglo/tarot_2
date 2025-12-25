@@ -37,10 +37,10 @@ export default function App() {
                 <img
                   src="/img/Logo%20Long%20NEW.svg"
                   alt="Tarot"
-                  className="mx-auto h-6 w-auto opacity-90"
+                  className="mx-auto mt-[7px] h-6 w-auto opacity-90"
                   draggable={false}
                 />
-                <h1 className="mt-2 font-bounded text-[22px] leading-[31px] font-semibold uppercase tracking-tight text-white/90 md:text-3xl md:leading-[36px]">
+                <h1 className="mt-2 h-[40px] font-bounded text-[22px] leading-[28px] font-semibold uppercase tracking-tight text-white/90 md:h-auto md:text-3xl md:leading-[36px]">
                   Приоткрой завесу 2026 года
                 </h1>
                 <p className="mt-2 hidden max-w-[52ch] text-sm leading-relaxed text-white/70 sm:block">

@@ -293,7 +293,7 @@ export default function TarotCarousel({ cards }) {
           ref={containerRef}
           className={[
             // Add extra bottom space on mobile because the action button is fixed to the viewport.
-            "no-scrollbar my-[23px] flex w-full gap-4 overflow-x-auto pt-[19px] pb-[92px] md:pb-[19px]",
+            "no-scrollbar my-[23px] flex w-full items-center gap-4 overflow-x-auto pt-[19px] pb-[92px] md:pb-[19px]",
             isSpinning ? "snap-none" : "snap-x snap-mandatory",
             "scroll-px-8 md:scroll-px-16",
             "px-7 md:px-10",
@@ -310,7 +310,7 @@ export default function TarotCarousel({ cards }) {
               ref={(node) => {
                 itemRefs.current[item.absIndex] = node;
               }}
-              className="snap-center shrink-0"
+              className="snap-center flex shrink-0 items-center"
               style={{
                 scrollSnapAlign: "center",
                 scrollSnapStop: "always",
@@ -358,7 +358,7 @@ export default function TarotCarousel({ cards }) {
               onClick={startSpin}
               disabled={isSpinning}
               className={[
-                "w-full rounded-2xl border px-4 py-[11px] text-sm font-semibold tracking-wide",
+                "w-full rounded-2xl border px-4 py-[14px] text-sm font-semibold tracking-wide",
                 "transition active:scale-[0.99]",
                 isSpinning
                   ? "border-white/10 bg-[#1C1C1C]/85 text-white/65 backdrop-blur md:bg-white/5 md:text-white/55"
