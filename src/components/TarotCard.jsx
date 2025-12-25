@@ -124,13 +124,13 @@ export default function TarotCard({
                   <div className="relative h-full overflow-hidden rounded-xl bg-white p-2 sm:p-4">
                     <div className="relative">
                       {yearLine ? (
-                        <div className="font-bounded mx-3 mt-[18px] mb-[18px] text-[18px] font-semibold uppercase leading-[23px] text-[#1C1C1C] sm:text-xl">
+                        <div className="font-bounded mx-3 mt-[18px] mb-[18px] text-[16px] font-semibold uppercase leading-[23px] text-[#1C1C1C] sm:text-xl">
                           {yearLine}
                         </div>
                       ) : null}
                       <div className="mt-3 overflow-auto pr-1 text-[14px] leading-snug text-[#1C1C1C] sm:mt-4 sm:text-base sm:leading-relaxed">
                         {mainBody ? (
-                          <div className="mx-[13px] whitespace-pre-line text-[10px]">{mainBody}</div>
+                          <div className="mx-[14px] whitespace-pre-line text-[12px]">{mainBody}</div>
                         ) : null}
 
                         {hasAdvice ? (

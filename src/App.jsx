@@ -51,7 +51,7 @@ export default function App() {
             </div>
           </header>
 
-          <main className="mx-auto flex w-full max-w-5xl flex-1 items-center">
+          <main className="mx-auto flex w-full max-w-5xl flex-1 items-center pb-[110px] md:pb-0">
             <TarotCarousel cards={cards} />
           </main>
 
