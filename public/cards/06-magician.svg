@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1400" viewBox="0 0 900 1400">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070913"/>
+      <stop offset="0.55" stop-color="#160b22"/>
+      <stop offset="1" stop-color="#05020a"/>
+    </linearGradient>
+    <radialGradient id="r" cx="40%" cy="25%" r="70%">
+      <stop offset="0" stop-color="#a855f7" stop-opacity="0.22"/>
+      <stop offset="0.55" stop-color="#22c55e" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="1400" rx="48" fill="url(#g)"/>
+  <rect width="900" height="1400" rx="48" fill="url(#r)"/>
+  <rect x="52" y="52" width="796" height="1296" rx="40" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+
+  <g filter="url(#glow)" opacity="0.92">
+    <path d="M250 420 H650" stroke="#f5d0fe" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="450" cy="540" r="132" fill="#ffffff" fill-opacity="0.05" stroke="#f5d0fe" stroke-opacity="0.45" stroke-width="2"/>
+    <path d="M450 430 L520 540 L450 650 L380 540 Z" fill="#a855f7" fill-opacity="0.14" stroke="#e9d5ff" stroke-opacity="0.45" stroke-width="2"/>
+    <circle cx="450" cy="540" r="18" fill="#f5d0fe" fill-opacity="0.65"/>
+    <path d="M360 740 C395 700, 410 690, 450 690 C490 690, 505 700, 540 740"
+          fill="none" stroke="#22c55e" stroke-opacity="0.22" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <text x="450" y="1220" text-anchor="middle" font-family="ui-serif, Georgia, serif"
+        font-size="54" letter-spacing="6" fill="#ffffff" fill-opacity="0.86">МАГ</text>
+  <text x="450" y="1282" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial"
+        font-size="22" letter-spacing="8" fill="#ffffff" fill-opacity="0.52">СТАРТ</text>
+</svg>
+
+
