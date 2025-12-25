@@ -87,17 +87,6 @@ export default function TarotCard({
             />
             {/* subtle inner frame */}
             <div className="pointer-events-none absolute inset-4 rounded-xl border border-white/10" />
-            {/* bottom title overlay */}
-            <div className="absolute inset-x-0 bottom-0 p-4">
-              <div className="mx-1 my-0 box-content rounded-xl border border-white/20 bg-white px-4 py-2">
-                <div className="text-xs normal-case tracking-[0.2px] text-[#1C1C1C]/70">
-                  Предсказание 2026
-                </div>
-                <div className="mt-1 font-bounded text-lg font-semibold uppercase text-[#1C1C1C]">
-                  {title}
-                </div>
-              </div>
-            </div>
 
             {/* Tap hint (only when the card is clickable) */}
             {showTapHint ? (
