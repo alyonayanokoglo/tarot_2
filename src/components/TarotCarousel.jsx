@@ -293,7 +293,7 @@ export default function TarotCarousel({ cards }) {
           ref={containerRef}
           className={[
             // Add extra bottom space on mobile because the action button is fixed to the viewport.
-            "no-scrollbar my-[23px] flex w-full items-center gap-4 overflow-x-auto pt-[19px] pb-[19px]",
+            "no-scrollbar mt-[8px] mb-[23px] flex w-full items-center gap-4 overflow-x-auto pt-[19px] pb-[19px]",
             isSpinning ? "snap-none" : "snap-x snap-mandatory",
             "scroll-px-8 md:scroll-px-16",
             "px-7 md:px-10",

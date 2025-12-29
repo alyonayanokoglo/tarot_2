@@ -31,7 +31,7 @@ export default function App() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex h-dvh flex-col overflow-hidden bg-transparent md:min-h-dvh md:overflow-auto"
         >
-          <header className="mx-auto w-full max-w-5xl px-6 pb-2 pt-6 md:px-10 md:pt-10">
+          <header className="mx-auto w-full max-w-5xl px-6 pb-2 pt-4 md:px-10 md:pt-10">
             <div className="flex flex-col items-center text-center">
               <div>
                 <img
@@ -40,8 +40,9 @@ export default function App() {
                   className="mx-auto mt-[7px] h-6 w-auto opacity-90"
                   draggable={false}
                 />
-                <h1 className="mt-2 h-[40px] font-bounded text-[22px] leading-[28px] font-semibold uppercase tracking-tight text-white/90 md:h-auto md:text-3xl md:leading-[36px]">
-                  Приоткрой завесу 2026 года
+                <h1 className="title-sheen mt-2 h-[60px] font-bounded text-[24px] leading-[30px] font-semibold uppercase tracking-tight text-white/90 md:h-auto md:text-3xl md:leading-[36px]">
+                  <span className="block md:inline">Приоткрой завесу</span>{" "}
+                  <span className="block md:inline">2026 года</span>
                 </h1>
                 <p className="mt-2 hidden max-w-[52ch] text-sm leading-relaxed text-white/70 sm:block">
                   Нажми «Выбрать предсказание» — рулетка выберет карту. Затем

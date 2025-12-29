@@ -13,6 +13,8 @@ export default function TarotCard({
   const showFront = face === "front";
   const showPrediction = face === "prediction";
   const showPulse = isClickable && showFront;
+  const baseScale = isActive ? (showFront || showPrediction ? 1.015 : 1) : 0.97;
+  const baseY = isActive ? (showFront || showPrediction ? -8 : -2) : 0;
 
   const predictionParts = (prediction ?? "").split(/\n\s*\n/);
   const yearLine = (predictionParts[0] ?? "").trim();
@@ -31,23 +33,28 @@ export default function TarotCard({
       <motion.div
         layout
         animate={{
-          scale: isActive ? (showFront || showPrediction ? 1.015 : 1) : 0.97,
-          y: isActive ? (showFront || showPrediction ? -8 : -2) : 0,
+          scale: showPulse ? [baseScale, baseScale + 0.012, baseScale] : baseScale,
+          y: baseY,
           rotateZ: 0,
           filter: isActive ? "saturate(1.05)" : "saturate(0.9)",
           opacity: isActive ? 1 : 0.82,
           boxShadow: showPulse
             ? [
-                "0 0 0 rgba(15,142,255,0)",
-                "0 0 22px rgba(15,142,255,0.22)",
-                "0 0 0 rgba(15,142,255,0)",
+                "0 0 0 rgba(88,176,255,0)",
+                "0 0 22px rgba(88,176,255,0.22)",
+                "0 0 0 rgba(88,176,255,0)",
               ]
-            : "0 0 0 rgba(15,142,255,0)",
+            : "0 0 0 rgba(88,176,255,0)",
         }}
         transition={{
           type: "spring",
           stiffness: 240,
           damping: 26,
+          ...(showPulse
+            ? {
+                scale: { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
+              }
+            : null),
           boxShadow: showPulse
             ? { duration: 1.35, repeat: Infinity, ease: "easeInOut" }
             : { duration: 0.2 },
@@ -61,6 +68,7 @@ export default function TarotCard({
           "rounded-2xl border border-white/10 bg-white/[0.04]",
           "shadow-none",
           isClickable ? "cursor-pointer" : "cursor-default",
+          showPulse ? "ring-1 ring-[#58B0FF]/35" : null,
           "overflow-hidden",
         ].join(" ")}
         onClick={isClickable ? onClick : undefined}
@@ -130,7 +138,9 @@ export default function TarotCard({
                       ) : null}
                       <div className="mt-3 overflow-auto pr-1 text-[14px] leading-snug text-[#1C1C1C] sm:mt-4 sm:text-base sm:leading-relaxed">
                         {mainBody ? (
-                          <div className="mx-[14px] whitespace-pre-line text-[12px]">{mainBody}</div>
+                          <div className="mx-[14px] whitespace-pre-line text-[11px] leading-[14px]">
+                            {mainBody}
+                          </div>
                         ) : null}
 
                         {hasAdvice ? (
@@ -138,7 +148,7 @@ export default function TarotCard({
                             <div className="mx-3 mt-5 font-bounded text-[11px] font-bold uppercase tracking-[1.3px] text-[#1C1C1C]/75 sm:mt-7 sm:text-sm">
                               Совет
                             </div>
-                            <div className="mx-3 mt-[5px] mb-[5px] whitespace-pre-line text-[12px] font-extralight italic text-[#595959]">
+                            <div className="mx-3 mt-[5px] mb-[5px] whitespace-pre-line text-[10px] leading-[13px] font-extralight italic text-[#595959]">
                               {adviceBody}
                             </div>
                           </>
