@@ -38,13 +38,6 @@ export default function TarotCard({
           rotateZ: 0,
           filter: isActive ? "saturate(1.05)" : "saturate(0.9)",
           opacity: isActive ? 1 : 0.82,
-          boxShadow: showPulse
-            ? [
-                "0 0 0 rgba(88,176,255,0)",
-                "0 0 22px rgba(88,176,255,0.22)",
-                "0 0 0 rgba(88,176,255,0)",
-              ]
-            : "0 0 0 rgba(88,176,255,0)",
         }}
         transition={{
           type: "spring",
@@ -55,9 +48,6 @@ export default function TarotCard({
                 scale: { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
               }
             : null),
-          boxShadow: showPulse
-            ? { duration: 1.35, repeat: Infinity, ease: "easeInOut" }
-            : { duration: 0.2 },
         }}
         className={[
           // Mobile: fit within dvh so page doesn't need vertical scrolling
@@ -68,7 +58,7 @@ export default function TarotCard({
           "rounded-2xl border border-white/10 bg-white/[0.04]",
           "shadow-none",
           isClickable ? "cursor-pointer" : "cursor-default",
-          showPulse ? "ring-1 ring-[#58B0FF]/35" : null,
+          showPulse ? "border-[#58B0FF]/35" : null,
           "overflow-hidden",
         ].join(" ")}
         onClick={isClickable ? onClick : undefined}

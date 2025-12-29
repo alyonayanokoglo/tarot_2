@@ -342,7 +342,7 @@ export default function TarotCarousel({ cards }) {
       <div
         className={[
           // Mobile: keep action button always on-screen.
-          "fixed inset-x-0 bottom-0 z-20 px-6 pb-[calc(env(safe-area-inset-bottom,0px)+12px)] pt-3 md:static md:mt-2 md:px-10 md:pb-0 md:pt-0",
+          "fixed inset-x-0 bottom-[5px] z-20 px-6 pb-[calc(env(safe-area-inset-bottom,0px)+12px)] pt-3 md:static md:mt-2 md:px-10 md:pb-0 md:pt-0",
         ].join(" ")}
       >
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-3">
